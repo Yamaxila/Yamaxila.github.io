@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!--
-    by Yamaxila
-    14.05.2020 - GitHub upload date
-    !-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yamaxila</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/main-media.css">
-    <script src="./js/nickname.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="arrow_down.css" />
+
+
+
 </head>
 <body>
+<header id="header">
+    <h1>Yamaxila</h1>
+    <h2>Developer</h2>
+    <div class="arrow bounce">
+        <img src="data/arrow-down.svg" class="arrow"/>
+    </div>
 
-<div class="nickname">
-    <span id="nickname_modify"></span>
-</div>
+</header>
+<script lang="JavaScript">
 
-<div class="desc">
-    <span id="desc_modify"></span>
-</div>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    var i = getRandomInt(4);
+    var cat = `cat${i}.gif`;
 
-<div class="buttons">
-    <a class="btn" href="https://www.vk.com/yamaxila">
-        <img class="logo" src="images/vk.png"/>
-    </a>
+    document.querySelector('header').style.setProperty('background', `url('./data/${cat}')`);
+    document.querySelector('header').style.setProperty('background-size', `cover`);
+    if(i === 2)
+        document.querySelector('header').style.setProperty('background-position-y', `25%`);
+    else
+        document.querySelector('header').style.setProperty('background-position-y', `50%`);
 
-    <a class="btn" href="discord.html">
-        <img class="logo" src="images/discord.png"/>
-    </a>
+    //document.style.
 
-    <a class="btn" href="https://instagram.com/yamaxila">
-        <img class="logo" src="images/inst.png"/>
-    </a>
-
-    <a class="btn" href="https://t.me/yamaxila">
-        <img class="logo" src="images/telegram.png"/>
-    </a>
-
-</div>
-
-<script>
-    load(0);
 </script>
+<div class="container">
+
+    <h1>Links</h1>
+    <br/>
+
+    <div class="nick">
+        <a href="https://nick-name.ru/nickname/id1426229/"><img src="https://nick-name.ru/img.php?nick=Yamaxila&sert=2" alt="Никнейм Yamaxila зарегистрирован!" border="0" /></a>
+    </div>
+    <br/>
+
+    <div class="buttons">
+        <a class="btn" href="https://www.vk.com/yamaxila">
+            <img class="logo" src="data/vk.png"/>
+        </a>
+
+        <a class="btn" href="discord.html">
+            <img class="logo" src="data/discord.png"/>
+        </a>
+
+        <a class="btn" href="https://instagram.com/yamaxila">
+            <img class="logo" src="data/inst.png"/>
+        </a>
+
+        <a class="btn" href="https://t.me/yamaxila">
+            <img class="logo" src="data/telegram.png"/>
+        </a>
+
+        <a class="btn" href="http://steamcommunity.com/id/yamaxila">
+            <img class="logo" src="data/steam.png"/>
+        </a>
+
+        <a class="btn" href="https://github.com/yamaxila">
+            <img class="logo" src="data/github.png"/>
+        </a>
+
+    </div>
+
+
+
+</div>
+
 </body>
 </html>

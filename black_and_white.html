@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <canvas id="conv"></canvas>
+</center>
+<script lang="javascript">
+
+    function build(){
+        let conv = document.getElementById("conv");
+
+        conv.setAttribute("width", "5500px");
+        conv.setAttribute("height", "4700px");
+        conv.style.backgroundColor = "#ffffff";
+
+        let ctx = conv.getContext('2d');
+
+        let w = parseInt(conv.getAttribute("width"));
+        let h =  parseInt(conv.getAttribute("height"));
+
+        let rW = 16;
+        let rH = 16;
+
+        let no = 336;
+        let ny = 286;
+
+
+        ctx.beginPath()
+        ctx.font = "16px serif";
+        ctx.textAlign = "right";
+
+        for (let i = 0; i < ny; i++) {
+            ctx.fillText("" + (i + 1), 58, h-(i * rH) - 2 - 64);
+        }
+        for (let j = 0; j < no; j++) {
+            drawMLineText(ctx, "" + (j + 1), 70 + rW * j, h - 48)
+        }
+
+        let x = 1;
+        let y = 1;
+
+        for (let i = 0; i < ny; i++) { // уток
+            for (let j = 0; j < no; j++) { // основа
+
+                ctx.beginPath()
+
+                ctx.strokeStyle = "#000000";
+                ctx.fillStyle = "#fff";
+
+                if(y === 1){
+                    if(x === 1 || x === 2){
+                        ctx.fillStyle = "#000000";
+                    }
+                } else if(y === 2){
+                    if(x === 2 || x === 3){
+                        ctx.fillStyle = "#000000";
+                    }
+                } else if(y === 3){
+                    if(x === 3 || x === 4){
+                        ctx.fillStyle = "#000000";
+                    }
+
+                } else if(y === 4){
+                    if(x === 1 || x === 4){
+                        ctx.fillStyle = "#000000";
+                    }
+                }
+
+                ctx.rect(60 + rW * j, h-(i * rH) - 80, rW, rH);
+                ctx.fill()
+                ctx.stroke()
+
+                if(x === 4) {
+                    x = 0;
+                }
+
+                x++;
+
+            }
+            if(y === 4){
+                y = 0;
+            }
+            y++;
+        }
+
+        function drawMLineText(ctx, text, x, y){
+            let len = text.split("").length;
+            let t = text.split("");
+
+            for(let i = 0; i < len; i++){
+                ctx.fillText(t[i], x, y + (i * 13));
+            }
+        }
+    }
+    build();
+</script>
+
+</body>
+</html>

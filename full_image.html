@@ -250,8 +250,8 @@
     function build(){
         let conv = document.getElementById("conv");
 
-        conv.setAttribute("width", "5500px");
-        conv.setAttribute("height", "4700px");
+        conv.setAttribute("width", "10000px");
+        conv.setAttribute("height", "10000px");
         conv.style.backgroundColor = "#ffffff";
 
         let ctx = conv.getContext('2d');
@@ -280,30 +280,37 @@
         let x = 1;
         let y = 1;
 
-        for (let i = 0; i < ny; i++) { // уток
-            for (let j = 0; j < no; j++) { // основа
+        let tempCo = 0;
+        let tempCy = 0;
+
+        for (let i = 0; i < ny*2; i++) { // уток
+            for (let j = 0; j < no*2; j++) { // основа
+
+                if(tempCo > no){
+                    tempCo = tempCo - no;
+                }
 
                 ctx.beginPath()
 
                 ctx.strokeStyle = "#000000";
-                ctx.fillStyle = cY[i];
-
+                ctx.fillStyle = cY[tempCy];
+                console.log("i:" + i + " tempCo: " + tempCy)
                 if(y === 1){
                     if(x === 1 || x === 2){
-                        ctx.fillStyle = cO[j];
+                        ctx.fillStyle = cO[tempCo];
                     }
                 } else if(y === 2){
                     if(x === 2 || x === 3){
-                        ctx.fillStyle = cO[j];
+                        ctx.fillStyle = cO[tempCo];
                     }
                 } else if(y === 3){
                     if(x === 3 || x === 4){
-                        ctx.fillStyle = cO[j];
+                        ctx.fillStyle = cO[tempCo];
                     }
 
                 } else if(y === 4){
                     if(x === 1 || x === 4){
-                        ctx.fillStyle = cO[j];
+                        ctx.fillStyle = cO[tempCo];
                     }
                 }
 
@@ -315,13 +322,28 @@
                     x = 0;
                 }
 
+
+
+
+
                 x++;
+                tempCo++;
+
 
             }
+
             if(y === 4){
                 y = 0;
             }
+
+            if(tempCy === ny){
+                tempCy = tempCy - ny;
+            }
+
             y++;
+            tempCy++;
+
+
         }
 
         function drawMLineText(ctx, text, x, y){

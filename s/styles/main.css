@@ -1,0 +1,225 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Monument Extended", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #030303;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.head {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.head h1 {
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    text-shadow: black 0px 4px 5px;
+
+}
+
+.head h2 {
+    color: #00e72f;
+    margin-top: 25px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    text-shadow: black 0px 4px 5px;
+}
+
+.head,
+.head:before {
+    background: 50% 50% / cover;
+}
+
+.head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 10%;
+    height: 10%;
+    display: block;
+    /*background: url('/assets/sk.png');*/
+    /*background-size: contain;*/
+    /*transform-origin: center center 0;*/
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.container .container-text {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.container .container-text p {
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.container {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    background: #000;
+    line-height: 30px;
+    font-weight: lighter;
+    /*padding: 40px;*/
+    color: #FFFFFF;
+    text-shadow: black 0px 3px 4px;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+.leftimg {
+    float: left;
+    margin-right: 25px;
+}
+.rightimg {
+    float: right;
+    margin-left: 25px;
+}
+
+#slider {
+    display: flex;
+    position: relative;
+}
+
+.left {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%,-50%);
+    width: 50px;
+    height: 50px;
+}
+
+.right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+    width: 50px;
+    height: 50px;
+}
+
+.discord {
+    display: flex;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-content: center;
+}
+
+.img-slider {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+
+@keyframes change {
+
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+
+}
+
+.image {
+    display: flex;
+    height: 900px;
+    position: relative;
+}
+
+.image2 {
+    display: flex;
+    max-width: 900px;
+    /*width: 700px;*/
+    max-height: 500px;
+    height: 700px;
+    position: relative;
+    margin-top: 25px;
+}
+.image2:hover,
+.image:hover {
+    transform: scale(105%);
+}
+
+.image-container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.text-image:first-child {
+    margin-right: 50px;
+}
+
+.head img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 400px;
+}
+
+.logoBlock {
+    justify-content: center;
+    text-align: center;
+}
+
+.imageBlock {
+max-width: 500px;
+}
+
+.nBlock {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container2 {
+    width: auto;
+    max-height: 600px;
+    justify-content: center;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пошёл нахуй</title>
+</head>
+<body>
+
+
+
+<center>
+    <b>Ответьте на простые вопросы, чтобы пойти нахуй</b>
+</center>
+
+<center>
+    <h6>1. Ты конченный?</h6>
+
+    <input type="checkbox" class="c">Да</input>
+    <br/>
+    <input type="checkbox" class="c">Конечно</input>
+    <br/>
+    <input type="checkbox" class="c">Что за тупые вопросы?</input>
+</center>
+
+<center>
+    <h6>2. Откуда ты узнал об этом опросе?</h6>
+
+    <input type="checkbox" class="c">Друзья посоветовали</input>
+    <br/>
+    <input type="checkbox" class="c">Рассылка</input>
+    <br/>
+    <input type="checkbox" class="c">Пришёл сам</input>
+</center>
+
+<center>
+    <h6>3. Что вы чувствуете при виде этой картинки?</h6>
+    <img src="https://media1.tenor.com/images/c04f935f069114dc1c99456efb21bb34/tenor.gif?itemid=19358811" width="200px" height="200px"/>
+    <br/>
+    <input type="checkbox" class="c">Страх</input>
+    <br/>
+    <input type="checkbox" class="c">Возбуждение</input>
+    <br/>
+    <input type="checkbox" class="c">Желание разослать это всем, кого я знаю</input>
+</center>
+
+<center>
+    <h6>4. Что вам хотелось бы сказать создателю опроса?</h6>
+    <h7>Напишите пару предложений, которые всё равно никто не прочитает</h7>
+    <br/>
+    <br/>
+    <input type="text" class="c" />
+</center>
+
+<center>
+    <h6>5. Ваши пожелания по улучшению опроса</h6>
+    <h7>Напишите пару предложений, которые всё равно никто не прочитает</h7>
+    <br/>
+    <br/>
+    <input type="text" class="c" />
+</center>
+
+<center>
+    <h6>6. Результаты</h6>
+    <h7>Нажмите на кнопку и алгоритм выведет ваш результат на экран</h7>
+    <br/>
+    <button id="res" onclick="click()" class="c" >результат</button>
+</center>
+</body>
+
+<script lang="javaScript">
+
+
+
+    let btn = document.getElementById("res");
+
+    btn.onclick = function click() {
+        let paras = document.getElementsByTagName("center");
+
+        while(paras[0]) {
+            paras[0].parentNode.removeChild(paras[0]);
+        }
+
+        let myDiv = document.createElement("div");
+        myDiv.innerHTML = "<center><h1>Результат:</h1></center><center><h6>Вы долбоёб!</h6></center><center><h6>Ну, а что ты ещё ожидал?</h6></center>";
+
+        document.body.appendChild(myDiv);
+    }
+
+</script>
+
+<style>
+
+
+    body{
+        background-color: #23272A;
+        color: white;
+    }
+
+    b {
+        font-size: 50px;
+    }
+
+    h6 {
+        color: #00e72f;
+        font-size: 20px;
+    }
+
+    .c {
+        font-size: 20px;
+    }
+
+
+
+
+
+
+</style>
+</html>
